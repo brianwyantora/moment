@@ -159,7 +159,8 @@ module.exports = function (grunt) {
                 'es3'      : true,
                 'camelcase' : true,
                 'globals': {
-                    'define': false
+                    'define': false,
+                    'JSON': false
                 }
             }
         },
