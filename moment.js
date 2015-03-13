@@ -1963,7 +1963,7 @@
         c._f = format;
         c._strict = strict;
 
-        return makeMoment(c).utc();
+        return makeMoment(c).utcOffset(0);
     };
 
     // creating with unix timestamp (in seconds)
@@ -2503,10 +2503,10 @@
                 if (typeof input === 'string') {
                     input = utcOffsetFromString(input);
                 }
-                if (Math.abs(input) < 16) {
+                if (input !== 0 && Math.abs(input) < 16) {
                     input = input * 60;
                 }
-                if (!this._isUTC && keepLocalTime) {
+                if (keepLocalTime && !this._isUTC) {
                     localAdjust = this._dateUtcOffset();
                 }
                 this._offset = input;
