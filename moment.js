@@ -2153,7 +2153,7 @@
     // compare moment object
     moment.isMoment = function (obj) {
         return obj instanceof Moment ||
-            (obj != null && hasOwnProp(obj, '_isAMomentObject'));
+            (obj != null && obj._isAMomentObject != null);
     };
 
     // for typechecking Duration objects
