@@ -1864,6 +1864,8 @@
             } else {
                 makeDateFromStringAndFormat(config);
             }
+        } else if (isDate(config._i)) {
+            config._d = config._i;
         } else {
             makeDateFromInput(config);
         }
